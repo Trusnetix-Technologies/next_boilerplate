@@ -1,0 +1,7 @@
+.env
+sitemap.xml
+sitemap-0.xml
+robots.txt
+package-lock.json
+.DS_Store
+node_modules
