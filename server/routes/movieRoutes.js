@@ -35,4 +35,32 @@ module.exports = (app) => {
       res.status(500).json({ error: error.message });
     }
   });
+
+  app.delete("/delete/movie/:id", async (req, res) => {
+    const { id } = req.params;
+    const response = await Movie.findByIdAndDelete(id);
+    res.status(200).json(response);
+  });
+
+  app.put("/update/movie/:id", async (req, res) => {
+    const { id } = req.params;
+    const { name, director, duration, genre, description, score, image } =
+      req.body;
+    const response = await Movie.findByIdAndUpdate(id, {
+      name,
+      director,
+      duration,
+      genre,
+      description,
+      score,
+      image,
+    });
+    res.status(200).json(response);
+  });
+
+  app.get("/get/movie/:id", async (req, res) => {
+    const { id } = req.params;
+    const response = await Movie.findById(id);
+    res.status(200).json(response);
+  });
 };

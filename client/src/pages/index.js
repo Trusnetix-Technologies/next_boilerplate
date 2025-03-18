@@ -1,5 +1,6 @@
 import Head from "next/head";
 import { useEffect, useState } from "react";
+import Link from "next/link";
 
 import MUIPosts from "../components/landing/muiPosts";
 import Posts from "../components/landing/posts";
@@ -18,9 +19,10 @@ export default function Home() {
       </Head>
       {/* ====== POSTS WITH BACKEND STARTS HERE ====== */}
       <Posts />
+      <Link href="/newPage">New Page</Link>
       {/* ====== POSTS WITH BACKEND END HERE ====== */}
       {/* ====== MUI POSTS STARTS HERE ====== */}
-      <MUIPosts />
+      {/* <MUIPosts /> */}
       {/* ====== MUI POSTS END HERE ====== */}
     </>
   );
