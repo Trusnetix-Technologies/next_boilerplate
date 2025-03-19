@@ -8,13 +8,13 @@ module.exports = (app) => {
     res.send("Hi there! Also, Yay!");
   });
 
-  app.get("/get/movies", async (req, res) => {
+  app.get("/api/v1/get/movies", async (req, res) => {
     console.log("Movies List");
     const response = await Movie.find();
     res.send(response);
   });
 
-  app.post("/add/movie", async (req, res) => {
+  app.post("/api/v1/add/movie", async (req, res) => {
     const { name, director, duration, genre, description, score, image } =
       req.body;
 
@@ -36,13 +36,13 @@ module.exports = (app) => {
     }
   });
 
-  app.delete("/delete/movie/:id", async (req, res) => {
+  app.delete("/api/v1/delete/movie/:id", async (req, res) => {
     const { id } = req.params;
     const response = await Movie.findByIdAndDelete(id);
     res.status(200).json(response);
   });
 
-  app.put("/update/movie/:id", async (req, res) => {
+  app.put("/api/v1/update/movie/:id", async (req, res) => {
     const { id } = req.params;
     const { name, director, duration, genre, description, score, image } =
       req.body;
@@ -58,7 +58,7 @@ module.exports = (app) => {
     res.status(200).json(response);
   });
 
-  app.get("/get/movie/:id", async (req, res) => {
+  app.get("/api/v1/get/movie/:id", async (req, res) => {
     const { id } = req.params;
     const response = await Movie.findById(id);
     res.status(200).json(response);

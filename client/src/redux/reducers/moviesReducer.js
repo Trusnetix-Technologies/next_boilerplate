@@ -3,7 +3,7 @@ import axios from "axios";
 
 export const fetchMovies = createAsyncThunk("movies/fetchMovies", async () => {
   try {
-    const response = await axios.get("/get/movies", {
+    const response = await axios.get("/api/v1/get/movies", {
       headers: {
         "Content-Type": "application/json",
       },

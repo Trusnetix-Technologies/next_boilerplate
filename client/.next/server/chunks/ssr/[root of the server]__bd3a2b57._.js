@@ -146,12 +146,12 @@ var __turbopack_async_dependencies__ = __turbopack_handle_async_dependencies__([
 ;
 const fetchMovies = (0, __TURBOPACK__imported__module__$5b$externals$5d2f40$reduxjs$2f$toolkit__$5b$external$5d$__$2840$reduxjs$2f$toolkit$2c$__esm_import$29$__["createAsyncThunk"])("movies/fetchMovies", async ()=>{
     try {
-        const response = await __TURBOPACK__imported__module__$5b$externals$5d2f$axios__$5b$external$5d$__$28$axios$2c$__esm_import$29$__["default"].get("/get/movies", {
+        const response = await __TURBOPACK__imported__module__$5b$externals$5d2f$axios__$5b$external$5d$__$28$axios$2c$__esm_import$29$__["default"].get("/api/v1/get/movies", {
             headers: {
                 "Content-Type": "application/json"
             }
         });
-        // console.log(response.data);
+        console.log("response.data: ", response.data);
         return response.data;
     } catch (error) {
         console.error("Error fetching movies:", error);
@@ -201,7 +201,7 @@ var __turbopack_async_dependencies__ = __turbopack_handle_async_dependencies__([
 ;
 const store = (0, __TURBOPACK__imported__module__$5b$externals$5d2f40$reduxjs$2f$toolkit__$5b$external$5d$__$2840$reduxjs$2f$toolkit$2c$__esm_import$29$__["configureStore"])({
     reducer: {
-        movies: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$redux$2f$reducers$2f$moviesReducer$2e$js__$5b$ssr$5d$__$28$ecmascript$29$__["default"].reducer
+        moviesData: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$redux$2f$reducers$2f$moviesReducer$2e$js__$5b$ssr$5d$__$28$ecmascript$29$__["default"].reducer
     }
 });
 __turbopack_async_result__();
